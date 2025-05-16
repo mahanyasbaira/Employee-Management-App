@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/more_nav_graph"
+    app:startDestination="@id/moreFragment">
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.dashboard.MoreFragment"
+        android:label="MoreFragment">
+        <action
+            android:id="@+id/action_moreFragment_to_noticeFragment"
+            app:destination="@id/noticeFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_holidayFragment"
+            app:destination="@id/holidayFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_companyRulesFragment"
+            app:destination="@id/companyRulesFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+        <action
+            android:id="@+id/action_moreFragment_to_employeeFragment"
+            app:destination="@id/employeeFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_leaveCalendarFragment"
+            app:destination="@id/leaveCalendarFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_meetingFragment"
+            app:destination="@id/meetingFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_staticPageFragment"
+            app:destination="@id/staticPageFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_changePasswordFragment2"
+            app:destination="@id/changePasswordFragment2" />
+        <action
+            android:id="@+id/action_moreFragment_to_supportFragment"
+            app:destination="@id/supportFragment" />
+        <action
+            android:id="@+id/action_moreFragment_to_tadaListFragment"
+            app:destination="@id/tadaListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noticeFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.NoticeFragment"
+        android:label="NoticeFragment" />
+    <fragment
+        android:id="@+id/holidayFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.HolidayFragment"
+        android:label="HolidayFragment" />
+    <fragment
+        android:id="@+id/companyRulesFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.CompanyRulesFragment"
+        android:label="CompanyRulesFragment" />
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.vishwaagrotech.digitalhr.ui.dashboard.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment2_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.EmployeeFragment"
+        android:label="EmployeeFragment" >
+        <action
+            android:id="@+id/action_employeeFragment_to_employeeDetailFragment"
+            app:destination="@id/employeeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaveCalendarFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.LeaveCalendarFragment"
+        android:label="LeaveCalendarFragment" />
+    <fragment
+        android:id="@+id/meetingFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.MeetingFragment"
+        android:label="MeetingFragment">
+        <action
+            android:id="@+id/action_meetingFragment_to_meetingDetailFragment"
+            app:destination="@id/meetingDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.NotificationFragment"
+        android:label="NotificationFragment" />
+
+    <action
+        android:id="@+id/global_notification"
+        app:destination="@id/notificationFragment" />
+    <fragment
+        android:id="@+id/staticPageFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.StaticPageFragment"
+        android:label="StaticPageFragment" />
+    <fragment
+        android:id="@+id/changePasswordFragment2"
+        android:name="com.vishwaagrotech.digitalhr.ui.form.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" />
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.UpdateProfileFragment"
+        android:label="UpdateProfileFragment" />
+    <fragment
+        android:id="@+id/meetingDetailFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.meetingdetail.MeetingDetailFragment"
+        android:label="MeetingDetailFragment" />
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.SupportFragment"
+        android:label="SupportFragment">
+        <action
+            android:id="@+id/action_supportFragment_to_supportListFragment"
+            app:destination="@id/supportListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/supportListFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.SupportListFragment"
+        android:label="SupportListFragment">
+        <action
+            android:id="@+id/action_supportListFragment_to_supportDetailFragment"
+            app:destination="@id/supportDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/supportDetailFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.SupportDetailFragment"
+        android:label="SupportDetailFragment">
+        <argument
+            android:name="supportDetail"
+            app:argType="com.vishwaagrotech.digitalhr.model.Support" />
+    </fragment>
+    <fragment
+        android:id="@+id/tadaListFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.tada.TadaListFragment"
+        android:label="TadaListFragment" >
+        <action
+            android:id="@+id/action_tadaListFragment_to_createTadaFragment"
+            app:destination="@id/createTadaFragment" />
+        <action
+            android:id="@+id/action_tadaListFragment_to_editTadaFragment"
+            app:destination="@id/editTadaFragment" />
+        <action
+            android:id="@+id/action_tadaListFragment_to_detailTadaFragment"
+            app:destination="@id/detailTadaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTadaFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.tada.CreateTadaFragment"
+        android:label="CreateTadaFragment" />
+    <fragment
+        android:id="@+id/editTadaFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.tada.EditTadaFragment"
+        android:label="EditTadaFragment" />
+    <fragment
+        android:id="@+id/detailTadaFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.tada.DetailTadaFragment"
+        android:label="DetailTadaFragment" />
+    <fragment
+        android:id="@+id/employeeDetailFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.EmployeeDetailFragment"
+        android:label="EmployeeDetailFragment" />
+</navigation>

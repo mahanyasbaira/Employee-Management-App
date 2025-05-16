@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "640970425163",
+    "project_id": "digitalhr-c2e6a",
+    "storage_bucket": "digitalhr-c2e6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640970425163:android:70cdd4090557a70fbb1ece",
+        "android_client_info": {
+          "package_name": "com.vishwaagrotech.digitalhr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640970425163-u722d2b484k154q4253b82ks0c1oeb52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjP6NRNyv73FvMOWGej34EeUN3nApFzLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640970425163-u722d2b484k154q4253b82ks0c1oeb52.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

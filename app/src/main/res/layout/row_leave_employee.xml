@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="leaveEmployee"
+            type="com.vishwaagrotech.digitalhr.model.LeaveEventEmployee" />
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.profile.adapter.LeaveEmployeeAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/inner_spacing"
+        android:background="@drawable/button_radius"
+        android:backgroundTint="@color/lightWhite"
+        android:padding="@dimen/section_spacing">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_date"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="@dimen/_20sdp">
+
+            <ImageView
+                imageUrl="@{leaveEmployee.image}"
+                android:layout_width="match_parent"
+                android:contentDescription="@string/todo"
+                android:scaleType="centerCrop"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/card_date"
+            android:layout_toStartOf="@id/card_days"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/section_spacing">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{leaveEmployee.name}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/inner_spacing"
+                android:text="@{leaveEmployee.role}"
+                android:textColor="@color/grey_a7"
+                android:textSize="@dimen/text_size_h6" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_days"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    intText="@{leaveEmployee.days}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_h3"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:text="@string/days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_h5"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>

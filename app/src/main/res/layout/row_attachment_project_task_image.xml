@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="attachment"
+            type="com.vishwaagrotech.digitalhr.model.Attachment" />
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.project.adapter.ProjectAttachmentListImageAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_margin="@dimen/inner_spacing"
+        android:background="@drawable/button_radius"
+        android:backgroundTint="@color/lightWhite">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            imageUrl="@{attachment.url}"
+            android:scaleType="centerCrop"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_h5" />
+    </RelativeLayout>
+</layout>

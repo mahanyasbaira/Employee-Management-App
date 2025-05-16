@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/project_nav_graph"
+    app:startDestination="@id/projectFragment">
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.UpdateProfileFragment"
+        android:label="UpdateProfileFragment" />
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.vishwaagrotech.digitalhr.ui.dashboard.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment2_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_profileFragment2_to_updateProfileFragment"
+        app:destination="@id/updateProfileFragment" />
+    <fragment
+        android:id="@+id/projectFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.dashboard.ProjectFragment"
+        android:label="ProjectFragment" >
+        <action
+            android:id="@+id/action_projectFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+        <action
+            android:id="@+id/action_projectFragment_to_projectListFragment"
+            app:destination="@id/projectListFragment" />
+        <action
+            android:id="@+id/action_projectFragment_to_projectDetailFragment"
+            app:destination="@id/projectDetailFragment" />
+        <action
+            android:id="@+id/action_projectFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.NotificationFragment"
+        android:label="NotificationFragment"/>
+
+    <action android:id="@+id/global_notification"
+        app:destination="@id/notificationFragment"/>
+
+    <action android:id="@+id/global_profile"
+        app:destination="@id/profileFragment2"/>
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.project.TaskListFragment"
+        android:label="TaskListFragment" >
+        <action
+            android:id="@+id/action_taskListFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectListFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.project.ProjectListFragment"
+        android:label="ProjectListFragment" >
+        <action
+            android:id="@+id/action_projectListFragment_to_projectDetailFragment"
+            app:destination="@id/projectDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectDetailFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.project.ProjectDetailFragment"
+        android:label="ProjectDetailFragment" >
+        <action
+            android:id="@+id/action_projectDetailFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.project.TaskDetailFragment"
+        android:label="TaskDetailFragment" >
+        <action
+            android:id="@+id/action_taskDetailFragment_to_commentListFragment"
+            app:destination="@id/commentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentListFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.project.CommentListFragment"
+        android:label="CommentListFragment" >
+        <argument
+            android:name="teams"
+            app:argType="com.vishwaagrotech.digitalhr.model.Team[]"/>
+
+        <argument
+            android:name="taskId"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_commentListFragment_to_employeeDetailFragment2"
+            app:destination="@id/employeeDetailFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeDetailFragment2"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.EmployeeDetailFragment"
+        android:label="EmployeeDetailFragment" />
+</navigation>

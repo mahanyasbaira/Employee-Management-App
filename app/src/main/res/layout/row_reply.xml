@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="reply"
+            type="com.vishwaagrotech.digitalhr.model.Reply" />
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.project.adapter.ReplyListAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/inner_spacing"
+        android:background="@drawable/button_radius"
+        android:backgroundTint="@color/lightWhite"
+        android:padding="@dimen/section_spacing">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_image"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_alignParentStart="true"
+            app:cardCornerRadius="@dimen/_11sdp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/_10sdp">
+
+                <ImageView
+                    imageUrl="@{reply.avatar}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/card_image"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/section_spacing">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{reply.username}"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_h5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{reply.created_at}"
+                    android:layout_marginStart="@dimen/section_spacing"
+                    android:textColor="@color/dimWhite"
+                    android:textSize="@dimen/text_size_h6" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/inner_spacing"
+                android:textColor="@color/grey_a7"
+                android:textSize="@dimen/text_size_h6" />
+
+            <TextView
+                android:id="@+id/text_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:layout_gravity="end"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h6" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

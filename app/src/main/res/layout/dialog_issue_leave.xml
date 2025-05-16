@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/section_spacing"
+        android:background="@drawable/background_gradient_linear"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/apply_leave"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_marginVertical="@dimen/section_spacing"
+                android:textSize="@dimen/text_size_h4"/>
+
+            <ImageView
+                android:id="@+id/image_close"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_close"
+                android:layout_centerVertical="true"
+                app:tint="@color/white" />
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_32sdp"
+            android:backgroundTint="@color/white"
+            android:layout_marginVertical="@dimen/section_spacing"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <Spinner
+                android:id="@+id/spinner_leave"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingVertical="@dimen/_5sdp" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_date_picker1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/select_a_date_from"
+            android:stateListAnimator="@null"
+            android:textColorHint="@color/grey_a7"
+            app:cornerRadius="@dimen/_5sdp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:layout_marginVertical="@dimen/inner_spacing"
+            android:backgroundTint="@color/lightWhite"
+            android:gravity="start|center_vertical"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_date_picker2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/select_a_date_to"
+            android:stateListAnimator="@null"
+            android:textColorHint="@color/grey_a7"
+            app:cornerRadius="@dimen/_5sdp"
+            android:insetTop="0dp"
+            android:layout_marginVertical="@dimen/inner_spacing"
+            android:insetBottom="0dp"
+            android:backgroundTint="@color/lightWhite"
+            android:gravity="start|center_vertical"/>
+
+        <EditText
+            android:id="@+id/edit_reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_80sdp"
+            android:hint="@string/reason"
+            android:textColor="@color/white"
+            android:layout_marginVertical="@dimen/inner_spacing"
+            android:background="@drawable/button_radius"
+            android:backgroundTint="@color/lightWhite"
+            android:gravity="start"
+            android:padding="@dimen/section_spacing"
+            android:textColorHint="@color/white"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_submit_leave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            app:cornerRadius="@dimen/_5sdp"
+            android:insetTop="0dp"
+            android:layout_marginVertical="@dimen/section_spacing"
+            android:insetBottom="0dp"
+            android:background="@drawable/button_radius"
+            app:backgroundTint="@null"/>
+    </LinearLayout>
+</layout>

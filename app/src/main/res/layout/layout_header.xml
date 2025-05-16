@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="headerModel"
+            type="com.vishwaagrotech.digitalhr.ui.dashboard.viewmodel.HeaderViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/section_spacing">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="@dimen/_20sdp">
+
+            <ImageView
+                android:id="@+id/image_profile"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:contentDescription="@string/todo"
+                app:imageUrl="@{headerModel.person.image}"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/layout_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/card_image"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/section_spacing">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/good_morning"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/text_size_h6" />
+
+            <TextView
+                android:id="@+id/text_user_fullname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{headerModel.person.name}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h4" />
+
+            <TextView
+                android:id="@+id/text_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{headerModel.person.username}"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/text_size_h6" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_nav_graph"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.dashboard.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_leaveRequestFragment"
+            app:destination="@id/leaveRequestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaveRequestFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.LeaveRequestFragment"
+        android:label="LeaveRequestFragment" >
+        <action
+            android:id="@+id/action_leaveRequestFragment_to_leaveListFragment"
+            app:destination="@id/leaveListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaveListFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.LeaveListFragment"
+        android:label="LeaveListFragment" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.NotificationFragment"
+        android:label="NotificationFragment"/>
+
+        <action android:id="@+id/global_notification"
+            app:destination="@id/notificationFragment"/>
+</navigation>

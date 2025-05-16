@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/leave_nav_graph"
+    app:startDestination="@id/leaveFragment">
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.UpdateProfileFragment"
+        android:label="UpdateProfileFragment" />
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.vishwaagrotech.digitalhr.ui.dashboard.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment2_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_profileFragment2_to_updateProfileFragment"
+        app:destination="@id/updateProfileFragment" />
+    <fragment
+        android:id="@+id/leaveFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.dashboard.LeaveFragment"
+        android:label="LeaveFragment" />
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.NotificationFragment"
+        android:label="NotificationFragment"/>
+
+    <action android:id="@+id/global_notification"
+        app:destination="@id/notificationFragment"/>
+
+    <action android:id="@+id/global_profile"
+        app:destination="@id/profileFragment2"/>
+</navigation>

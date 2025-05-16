@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="attachment"
+            type="com.vishwaagrotech.digitalhr.model.Attachment" />
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.tada.adapter.ServerAttachmentListAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/inner_spacing"
+        android:background="@drawable/button_radius"
+        android:backgroundTint="@color/lightWhite"
+        android:padding="@dimen/section_spacing">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/layout_button"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/section_spacing">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{attachment.url}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:backgroundTint="#00000000"
+                android:padding="0dp"
+                android:onClick="@{()->handler.onDeleteClicked(attachment)}"
+                android:stateListAnimator="@null"
+                app:icon="@drawable/ic_close"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="@dimen/_15sdp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

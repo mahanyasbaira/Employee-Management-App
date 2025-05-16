@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.project.ProjectDetailFragment" />
+
+        <variable
+            name="viewmodel"
+            type="com.vishwaagrotech.digitalhr.ui.project.viewmodel.ProjectDetailViewModel" />
+
+    </data>
+
+    <com.simform.refresh.SSPullToRefreshLayout
+        android:id="@+id/refresh_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layout_check_in"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_light_arrow" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/toolbar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/section_spacing">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/inner_spacing"
+                            android:text="@{viewmodel.projectDetail.priority}"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_h5" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/inner_spacing"
+                        android:paddingVertical="@dimen/inner_spacing"
+                        android:text="@{viewmodel.projectDetail.name}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_h4"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/inner_spacing"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/inner_spacing"
+                                    android:text="Due Date:"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_size_h6"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingEnd="@dimen/inner_spacing"
+                                    android:text="@{viewmodel.projectDetail.startDate}"
+                                    android:textColor="@color/red_end"
+                                    android:textSize="@dimen/text_size_h6"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/section_spacing"
+                            app:cardBackgroundColor="@color/colorDarkBlue">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/inner_spacing"
+                                android:text="@{viewmodel.projectDetail.status}"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_h6" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/section_spacing"
+                        android:paddingVertical="@dimen/inner_spacing"
+                        android:text="Description"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_h4"
+                        android:textStyle="bold" />
+
+                    <com.borjabravo.readmoretextview.ReadMoreTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="100"
+                        app:trimMode="trimModeLength"
+                        app:showTrimExpandedText="true"
+                        app:trimLength="200"
+                        app:colorClickableText="@color/white"
+                        app:trimExpandedText="Show More"
+                        app:trimCollapsedText="Show Less"
+                        htmlText="@{viewmodel.projectDetail.description}"
+                        android:paddingVertical="@dimen/inner_spacing"
+                        android:textColor="#B5F9F6EE"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/inner_spacing"
+                        android:background="@color/dimWhite" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/inner_spacing"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="@dimen/inner_spacing"
+                            android:text="Teams/Leader"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_h4"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:padding="@dimen/inner_spacing"
+                            android:text="View All ->"
+                            underlineText="@{`1`}"
+                            android:onClick="@{()->handler.onTeamClicked()}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_h5" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/inner_spacing">
+
+                        <com.zen.overlapimagelistview.OverlapImageListView
+                            android:id="@+id/overlapImage_team"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_alignParentStart="true"
+                            app:circleCount="3"
+                            app:fillColor="#FFFFFF"
+                            app:strokeColor="#FFFFFF"
+                            app:strokeWidth="2dp" />
+
+                        <com.zen.overlapimagelistview.OverlapImageListView
+                            android:id="@+id/overlapImage_leader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_alignParentEnd="true"
+                            app:circleCount="3"
+                            app:fillColor="#FFFFFF"
+                            app:strokeColor="#FFFFFF"
+                            app:strokeWidth="2dp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/inner_spacing"
+                        android:background="@color/dimWhite" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/inner_spacing"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="@dimen/inner_spacing"
+                            android:text="Attachments"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_h4"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:padding="@dimen/inner_spacing"
+                            android:text="Show Media ->"
+                            underlineText="@{`1`}"
+                            android:onClick="@{()->handler.onAttachmentClicked()}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_h5" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/inner_spacing">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0"
+                            android:text="@{`Files/Images ( `+viewmodel.projectDetail.attachment.size()+ ` )`}"
+                            android:textAllCaps="false"
+                            android:onClick="@{()->handler.onAttachmentClicked()}"
+                            app:backgroundTint="@color/colorDarkBlue" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/inner_spacing"
+                        android:background="@color/dimWhite" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="@dimen/inner_spacing"
+                        android:layout_marginTop="@dimen/inner_spacing"
+                        android:text="Tasks"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_h4"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_tasks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </RelativeLayout>
+    </com.simform.refresh.SSPullToRefreshLayout>
+</layout>

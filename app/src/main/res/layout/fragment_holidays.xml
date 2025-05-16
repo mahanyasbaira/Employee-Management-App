@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.profile.HolidayFragment" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_light_arrow" />
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_marginHorizontal="@dimen/section_spacing"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_new"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/section_spacing"
+                android:background="@drawable/radio_flat_selector"
+                android:button="@android:color/transparent"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/upcoming"
+                android:textColor="@drawable/radio_flat_text_selector"
+                android:textSize="@dimen/text_size_h6" />
+
+            <RadioButton
+                android:id="@+id/radio_old"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/section_spacing"
+                android:background="@drawable/radio_flat_selector"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/past_holidays"
+                android:textColor="@drawable/radio_flat_text_selector"
+                android:textSize="@dimen/text_size_h6" />
+
+        </RadioGroup>
+
+        <com.simform.refresh.SSPullToRefreshLayout
+            android:id="@+id/refresh_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/radiogroup">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_holidays"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/inner_spacing" />
+        </com.simform.refresh.SSPullToRefreshLayout>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.dashboard.ProjectFragment" />
+
+        <variable
+            name="viewmodel"
+            type="com.vishwaagrotech.digitalhr.ui.dashboard.viewmodel.ProjectViewModel" />
+    </data>
+
+    <com.simform.refresh.SSPullToRefreshLayout
+        android:id="@+id/refresh_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layout_check_in"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/toolbar"
+
+                layout="@layout/toolbar_light_arrow" />
+
+            <include
+                android:id="@+id/layout_header"
+                layout="@layout/layout_header" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/layout_header">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/section_spacing">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/transparent"
+                        app:cardCornerRadius="0dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_radius"
+                            android:backgroundTint="#20FFFFFF"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_15sdp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:gravity="center">
+
+                                <com.google.android.material.progressindicator.CircularProgressIndicator
+                                    android:id="@+id/progress_project"
+                                    progress_color="@{viewmodel._projectOverview.totalProjectProgress}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:progress="@{viewmodel._projectOverview.totalProjectProgress}"
+                                    app:indicatorSize="@dimen/_100sdp"
+                                    app:trackColor="@color/lightWhite"
+                                    app:trackCornerRadius="10dp"
+                                    app:trackThickness="20dp" />
+
+                                <TextView
+                                    android:id="@+id/text_project_in_percent"
+                                    android:layout_width="@dimen/_105sdp"
+                                    android:layout_height="@dimen/_105sdp"
+                                    android:gravity="center"
+                                    android:text="@{viewmodel._projectOverview.totalProjectProgress +`%`}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_h3"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight=".5"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="Progress Current\nTask"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_h4"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginVertical="@dimen/inner_spacing"
+                                    android:background="@color/white" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/text_project_progress"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="start"
+                                        android:gravity="start"
+                                        android:text='@{(viewmodel._projectOverview.totalCompleted+`/`+viewmodel._projectOverview.totalTask)}'
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/text_size_h5"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="start"
+                                        android:gravity="start"
+                                        android:text=" Task Completed"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/text_size_h5"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:id="@+id/layout_project"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="@dimen/section_spacing">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:text="Recent Projects"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_h4"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:padding="@dimen/inner_spacing"
+                                android:text="View All ->"
+                                underlineText="@{`1`}"
+                                android:onClick="@{()->handler.onAllProjectClicked()}"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_h5" />
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_projects"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_task"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="@dimen/section_spacing">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:text="Recent Tasks"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_h4"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:padding="@dimen/inner_spacing"
+                                android:text="View All ->"
+                                underlineText="@{`1`}"
+                                android:onClick="@{()->handler.onAllTaskClicked()}"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_h5" />
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_tasks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </RelativeLayout>
+    </com.simform.refresh.SSPullToRefreshLayout>
+</layout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.profile.LeaveCalendarFragment" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_light_arrow" />
+
+        <com.simform.refresh.SSPullToRefreshLayout
+            android:id="@+id/refresh_page"
+            android:layout_width="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.applandeo.materialcalendarview.CalendarView
+                        android:id="@+id/calendarView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/section_spacing"
+                        app:abbreviationsBarColor="@color/colorDarkBlue"
+                        app:abbreviationsLabelsColor="@color/white"
+                        app:daysLabelsColor="@color/white"
+                        app:eventsEnabled="true"
+                        app:headerColor="@color/colorBlueBlack"
+                        app:highlightedDaysLabelsColor="@color/white"
+                        app:pagesColor="#041033"
+                        app:selectionColor="@color/colorBlue"
+                        app:selectionLabelColor="@color/white"
+                        app:todayLabelColor="@color/colorBlue"
+                        app:type="one_day_picker" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/section_spacing"
+                        android:layout_marginVertical="@dimen/section_spacing"
+                        android:text="@string/leave_lists"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_h5"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerview_leave_employee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/inner_spacing" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </com.simform.refresh.SSPullToRefreshLayout>
+    </RelativeLayout>
+</layout>

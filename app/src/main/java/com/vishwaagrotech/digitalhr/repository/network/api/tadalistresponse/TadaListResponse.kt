@@ -1,0 +1,8 @@
+package com.vishwaagrotech.digitalhr.repository.network.api.tadalistresponse
+
+data class TadaListResponse(
+    val data: List<Data>,
+    val message: String,
+    val status: Boolean,
+    val status_code: Int
+)

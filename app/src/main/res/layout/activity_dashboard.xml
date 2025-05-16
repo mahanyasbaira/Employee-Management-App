@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.dashboard.DashboardActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:alpha=".6"
+            android:src="@drawable/back"/>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/dashboard_nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/navigation_dashboard"
+            android:layout_marginBottom="-7dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/dashboard_nav_graph" />
+
+        <me.ibrahimsn.lib.SmoothBottomBar
+            android:id="@+id/navigation_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:paddingStart="@dimen/inner_spacing"
+            android:paddingEnd="@dimen/_5sdp"
+            app:backgroundColor="@android:color/transparent"
+            app:iconSize="@dimen/_15sdp"
+            app:textSize="@dimen/_8ssp"
+            android:background="@android:color/transparent"
+            app:iconTintActive="@color/white"
+            android:layout_alignParentBottom="true"
+            app:iconTint="@color/white"
+            app:duration="800"
+            app:textColor="@color/white"
+            app:indicatorColor="#40f1f1f1"
+            app:menu="@menu/menu_dashboard" />
+    </RelativeLayout>
+</layout>

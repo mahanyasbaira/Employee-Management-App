@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.dashboard.AttendanceFragment" />
+    </data>
+
+    <com.simform.refresh.SSPullToRefreshLayout
+        android:id="@+id/refresh_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_light_arrow" />
+
+            <include
+                android:id="@+id/layout_header"
+                layout="@layout/layout_header" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/layout_header">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/section_spacing">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/inner_spacing"
+                        android:paddingVertical="@dimen/section_spacing"
+                        android:text="@string/check_in_out"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_h5" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_minus15sdp">
+
+                            <com.moos.library.HorizontalProgressView
+                                android:id="@+id/progressView_horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp"
+                                app:track_width="@dimen/_25sdp"
+                                app:animateType="LinearInterpolator"
+                                app:end_progress="100"
+                                app:start_progress="0"
+                                app:progressTextVisibility="false"
+                                app:progressTextSize="0sp"
+                                app:progressDuration="5000"
+                                app:textMovedEnable="false"
+                                app:corner_radius="@dimen/_20sdp"
+                                app:isTracked="true"
+                                app:trackColor="#ffffff"/>
+
+                            <TextView
+                                android:id="@+id/text_progress_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 hr 0 min"
+                                android:layout_marginTop="@dimen/_30sdp"
+                                android:textColor="@color/black_2121"
+                                android:layout_centerHorizontal="true"/>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/inner_spacing"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/inner_spacing">
+
+                            <TextView
+                                android:id="@+id/text_start"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:gravity="start"
+                                android:textColor="@color/colorGrey"
+                                android:textSize="@dimen/text_size_h5" />
+
+                            <TextView
+                                android:id="@+id/text_end"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:gravity="end"
+                                android:text="@string/dash"
+                                android:textColor="@color/colorGrey"
+                                android:textSize="@dimen/text_size_h5" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/section_spacing"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".6"
+                            android:paddingHorizontal="@dimen/inner_spacing"
+                            android:text="@string/history"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_h5" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".4"
+                            android:background="@drawable/button_radius"
+                            android:backgroundTint="@color/white">
+
+                            <Spinner
+                                android:id="@+id/spinner_month"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/filterList"
+                                android:paddingVertical="@dimen/_5sdp" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_radius"
+                        android:backgroundTint="@color/transparent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button_radius"
+                            android:backgroundTint="#40000000"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/section_spacing"
+                            android:paddingVertical="@dimen/section_spacing">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".25"
+                                android:text="@string/date"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_h6"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".25"
+                                android:text="@string/day"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_h6"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".25"
+                                android:text="@string/start_time"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_h6" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".25"
+                                android:text="@string/end_time"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_h6"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerview_attendance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </RelativeLayout>
+    </com.simform.refresh.SSPullToRefreshLayout>
+</layout>

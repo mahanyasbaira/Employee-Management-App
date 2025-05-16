@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#000000</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#0a0c17</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="lightWhite">#20FFFFFF</color>
+    <color name="dimWhite">#40FFFFFF</color>
+
+    <color name="grey">#696969</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="colorTheme">#000000</color>
+    <color name="colorBackground">#000000</color>
+    <color name="colorSecondary">#f56961</color>
+    <color name="colorBlackFaded">#393E46</color>
+    <color name="colorGrey">#EEEEEE</color>
+    <color name="colorGreyFaded">#CCEEEEEE</color>
+    <color name="colorBlueBlack">#222831</color>
+    <color name="colorYellow">#FFD700</color>
+
+    <color name="colorPink">#DC3772</color>
+    <color name="colorPinkFaded">#DF6590</color>
+
+    <color name="colorBlue">#03c1ff</color>
+    <color name="colorDarkBlue">#036eb7</color>
+    <color name="colorDarkBlueFaded">#288ACD</color>
+
+    <color name="colorThemeVariant">#000000</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+</resources>

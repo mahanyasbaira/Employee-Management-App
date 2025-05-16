@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.dashboard.ProfileFragment" />
+
+        <variable
+            name="viewmodel"
+            type="com.vishwaagrotech.digitalhr.ui.profile.viewmodel.UserProfileViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_light_arrow" />
+
+        <com.simform.refresh.SSPullToRefreshLayout
+            android:id="@+id/refresh_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/layout_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/section_spacing"
+                        android:backgroundTint="@color/lightWhite"
+                        android:orientation="vertical"
+                        android:padding="@dimen/section_spacing">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_image"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:layout_gravity="center"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:onClick="@{()->handler.changeProfilePicture()}"
+                            app:cardCornerRadius="@dimen/_30sdp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/image_profile"
+                                    android:layout_width="@dimen/_60sdp"
+                                    android:layout_height="@dimen/_60sdp"
+                                    android:contentDescription="@string/todo"
+                                    android:scaleType="centerCrop"
+                                    app:imageUrl="@{viewmodel.user.avatar}" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_alignParentBottom="true"
+                                    android:background="#80fbfbfb"
+                                    android:gravity="center"
+                                    android:text="@string/change"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_size_h6" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/text_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/inner_spacing"
+                            android:text="@{viewmodel.user.name}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_h4"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/inner_spacing"
+                            android:text="@{viewmodel.user.username}"
+                            android:textColor="@color/colorGreyFaded"
+                            android:textSize="@dimen/text_size_h5" />
+
+                        <TextView
+                            android:id="@+id/text_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/inner_spacing"
+                            android:text="@{viewmodel.user.email}"
+                            android:textColor="@color/colorGreyFaded"
+                            android:textSize="@dimen/text_size_h5" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_other_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/section_spacing"
+                            android:text="@string/other_details"
+                            android:textColor="@color/grey_a7"
+                            android:textSize="@dimen/text_size_h5" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_other_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/section_spacing"
+                            android:background="@drawable/button_radius"
+                            android:backgroundTint="@color/lightWhite"
+                            android:orientation="vertical"
+                            android:padding="@dimen/section_spacing">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/phone_no"
+                                    android:layout_alignParentStart="true"
+                                    android:textColor="@color/colorGrey"
+                                    android:textSize="@dimen/text_size_h5" />
+
+                                <TextView
+                                    android:id="@+id/text_phone"
+                                    longText="@{viewmodel.user.phone}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_h5"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/section_spacing">
+
+                                <TextView
+                                    android:layout_alignParentStart="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/post"
+                                    android:textColor="@color/colorGrey"
+                                    android:textSize="@dimen/text_size_h5" />
+
+                                <TextView
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{viewmodel.user.post}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_h5"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/section_spacing">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/date_of_birth"
+                                    android:layout_alignParentStart="true"
+                                    android:textColor="@color/colorGrey"
+                                    android:textSize="@dimen/text_size_h5" />
+
+                                <TextView
+                                    android:layout_alignParentEnd="true"
+                                    android:id="@+id/text_dob"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{viewmodel.user.dob}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_h5"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/section_spacing">
+
+                                <TextView
+                                    android:layout_alignParentStart="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/gender"
+                                    android:textColor="@color/colorGrey"
+                                    android:textSize="@dimen/text_size_h5" />
+
+                                <TextView
+                                    android:layout_alignParentEnd="true"
+                                    android:id="@+id/text_gender"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{viewmodel.user.gender}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_h5"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/section_spacing">
+
+                                <TextView
+                                    android:layout_alignParentStart="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/address"
+                                    android:textColor="@color/colorGrey"
+                                    android:textSize="@dimen/text_size_h5" />
+
+                                <TextView
+                                    android:layout_alignParentEnd="true"
+                                    android:id="@+id/text_address"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{viewmodel.user.address}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_h5"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/section_spacing"
+                            android:text="@string/bank_details"
+                            android:textColor="@color/grey_a7"
+                            android:textSize="@dimen/text_size_h5" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_bank_detail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/section_spacing"
+                            android:background="@drawable/button_radius"
+                            android:backgroundTint="@color/lightWhite"
+                            android:orientation="vertical"
+                            android:padding="@dimen/section_spacing">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_alignParentStart="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/bank_name"
+                                    android:textColor="@color/colorGrey"
+                                    android:textSize="@dimen/text_size_h5" />
+
+                                <TextView
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{viewmodel.user.bank_name}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_h5"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/section_spacing">
+
+                                <TextView
+                                    android:layout_alignParentStart="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/account_number"
+                                    android:textColor="@color/colorGrey"
+                                    android:textSize="@dimen/text_size_h5" />
+
+                                <TextView
+                                    android:layout_alignParentEnd="true"
+                                    longText="@{viewmodel.user.bank_account_no}"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_h5"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/section_spacing">
+
+                                <TextView
+                                    android:layout_alignParentStart="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/joined_date"
+                                    android:textColor="@color/colorGrey"
+                                    android:textSize="@dimen/text_size_h5" />
+
+                                <TextView
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{viewmodel.user.joining_date}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_h5"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </com.simform.refresh.SSPullToRefreshLayout>
+    </LinearLayout>
+</layout>

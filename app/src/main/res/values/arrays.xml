@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="BrushingChartColor">
+        <item>#036eb7</item>
+        <item>#FFD700</item>
+        <item>#f56961</item>
+        <item>#EEEEEE</item>
+        <item>#03c1ff</item>
+        <item>#222831</item>
+        <item>#FF018786</item>
+    </array>
+
+    <array name="filterList">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </array>
+
+    <array name="leaveList">
+        <item>Sick Leave</item>
+        <item>Urgent Leave</item>
+        <item>Covid Leave</item>
+        <item>Paid Leave</item>
+        <item>Unpaid Leave</item>
+    </array>
+</resources>

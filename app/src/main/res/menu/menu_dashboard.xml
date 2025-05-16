@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_nav_graph"
+        android:title="Home"
+        android:icon="@drawable/ic_home"/>
+
+    <item
+        android:id="@+id/project_nav_graph"
+        android:title="Projects"
+        android:icon="@drawable/ic_project"/>
+
+    <item
+        android:id="@+id/leave_nav_graph"
+        android:title="Leaves"
+        android:icon="@drawable/ic_leave"/>
+
+    <item
+        android:id="@+id/attendance_nav_graph"
+        android:title="Attendance"
+        android:icon="@drawable/ic_calendar"/>
+
+    <item
+        android:id="@+id/more_nav_graph"
+        android:title="More"
+        android:icon="@drawable/ic_more"/>
+
+</menu>

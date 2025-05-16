@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.dashboard.MoreFragment" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_light_arrow" />
+
+        <include
+            android:id="@+id/layout_header"
+            layout="@layout/layout_header" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/layout_header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/section_spacing">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/section_spacing"
+                    android:text="@string/services"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_h5"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onProfileClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_profile"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/profile"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onChangePasswordClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_password"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/change_password"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onMeetingClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_team"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/meetings"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onHolidayClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/holidays"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onEmployeeClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_team"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/team_sheet"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onLeaveCalendarClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/leave_calendar"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onNoticeClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_notice"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/notices"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onSupportClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_support"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="Support"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onTadaClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_tada"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="TADA"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/section_spacing"
+                    android:text="@string/additional"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_h5"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onRulesClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_rules"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/company_rules"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onStaticPageClicked(`about-us`)}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_about"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/about_us"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onStaticPageClicked(`terms-and-conditions`)}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_terms"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/terms_and_conditions"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onPrivacyClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_policy"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/privacy_policy"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/section_spacing"
+                    android:paddingVertical="@dimen/_8sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_security"
+                        app:tint="@color/white" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/check_security"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/colorDarkBlue"
+                        android:minHeight="0dp"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/security_check"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5"
+                        app:thumbTint="@color/colorDarkBlue"
+                        app:trackTint="@color/lightWhite" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/section_spacing"
+                    android:background="#40696969" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->handler.onLogOutClicked()}"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/section_spacing">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_log_out"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:text="@string/log_out"
+                        android:textColor="@color/colorGreyFaded"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</layout>

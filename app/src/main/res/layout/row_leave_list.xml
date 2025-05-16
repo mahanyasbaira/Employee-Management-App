@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="leave"
+            type="com.vishwaagrotech.digitalhr.model.Leave" />
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.profile.adapter.LeaveAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_radius"
+        android:backgroundTint="@color/lightWhite"
+        android:layout_marginVertical="@dimen/inner_spacing"
+        android:layout_marginHorizontal="@dimen/section_spacing"
+        android:padding="@dimen/section_spacing">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_h5"
+                    android:text="@{leave.title}"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:gravity="end"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorGrey"
+                    android:textSize="@dimen/text_size_h6"
+                    android:text="@{leave.createdAt}"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/inner_spacing"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_h6"
+                    android:text="@{leave.startDate}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="@dimen/inner_spacing"
+                    android:textSize="@dimen/text_size_h6"
+                    android:text="@{leave.engDate}"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlue"
+                android:textSize="@dimen/text_size_h6"
+                android:text="@{`By ` + leave.updatedBy}"/>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/text_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:padding="@dimen/inner_spacing"
+                android:text="@string/approved"/>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

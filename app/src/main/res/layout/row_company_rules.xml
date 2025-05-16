@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="companyRule"
+            type="com.vishwaagrotech.digitalhr.model.CompanyRule" />
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.profile.adapter.CompanyRulesAdapter" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/section_spacing"
+        android:backgroundTint="@color/lightWhite"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="0dp">
+
+        <hakobastvatsatryan.DropdownTextView
+            android:id="@+id/dropdown_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:arrow_drawable="@drawable/ic_right_arrow"
+            app:content_padding="@dimen/section_spacing"
+            app:content_text_color="@color/colorGreyFaded"
+            app:content_text_size="@dimen/text_size_h5"
+            app:expand_duration="500"
+            app:link_text_color="@color/white"
+            app:panel_padding="@dimen/section_spacing"
+            app:title_text_color="@color/white"
+            app:title_text_color_expanded="@color/white"
+            app:title_text_size="@dimen/text_size_h4" />
+    </androidx.cardview.widget.CardView>
+</layout>

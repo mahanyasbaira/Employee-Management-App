@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="task"
+            type="com.vishwaagrotech.digitalhr.model.Task" />
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.dashboard.adapter.TaskListAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/inner_spacing"
+        android:background="@drawable/button_radius"
+        android:backgroundTint="@color/lightWhite"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="@dimen/section_spacing">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/inner_spacing"
+            android:text="@{task.name}"
+            android:maxLines="2"
+            android:textSize="@dimen/text_size_h4"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/inner_spacing"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/icon_project"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:src="@drawable/ic_project"
+                android:layout_centerVertical="true"
+                app:tint="@color/dimWhite" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/inner_spacing"
+                android:layout_marginStart="@dimen/inner_spacing"
+                android:layout_toEndOf="@id/icon_project"
+                android:layout_centerVertical="true"
+                android:text="@{task.projectName}"
+                android:maxLines="2"
+                android:textColor="@color/dimWhite"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="@dimen/section_spacing"
+            android:background="@color/lightWhite"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/inner_spacing"
+                android:layout_marginStart="@dimen/inner_spacing"
+                android:layout_centerVertical="true"
+                android:text="@{task.startDate +` - `+ task.endDate}"
+                android:maxLines="2"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                card_background_tint_task="@{task.status}"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/inner_spacing"
+                    android:text="@{task.status}"
+                    android:textColor="@color/white" />
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

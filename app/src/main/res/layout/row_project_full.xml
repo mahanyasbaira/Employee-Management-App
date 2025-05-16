@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="project"
+            type="com.vishwaagrotech.digitalhr.model.Project" />
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.dashboard.adapter.ProjectListAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_margin="@dimen/inner_spacing"
+        android:background="@drawable/button_radius"
+        android:backgroundTint="@color/lightWhite"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="@dimen/section_spacing">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:src="@drawable/ic_project"
+                android:layout_centerVertical="true"
+                app:tint="@color/white" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:cardBackgroundColor="@color/lightWhite"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/inner_spacing"
+                    android:text="@{project.priority}"
+                    android:textColor="@color/white" />
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/inner_spacing"
+            android:text="@{project.name}"
+            android:maxLines="2"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/inner_spacing"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@{project.startDate}"
+                android:textColor="@color/green_start" />
+
+            <ImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/text_total_tasks"
+                android:src="@drawable/ic_task"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/text_total_tasks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/inner_spacing"
+                android:text="@{project.totalTask}"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <com.zen.overlapimagelistview.OverlapImageListView
+            android:id="@+id/overlapImage_team"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/section_spacing"
+            app:circleCount="3"
+            app:fillColor="#FFFFFF"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="2dp" />
+
+        <com.moos.library.HorizontalProgressView
+            android:id="@+id/progressView_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:progress="@{Integer.parseInt(project.progress)}"
+            app:animateType="LinearInterpolator"
+            app:corner_radius="@dimen/_20sdp"
+            progress_linear_color="@{Integer.parseInt(project.progress)}"
+            app:end_progress="100"
+            app:isTracked="true"
+            app:progressDuration="5000"
+            app:progressTextSize="0sp"
+            app:progressTextVisibility="false"
+            app:start_progress="0"
+            app:textMovedEnable="false"
+            app:trackColor="#ffffff"
+            app:track_width="@dimen/_10sdp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/inner_spacing"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@{project.status}"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/text_total_precent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/inner_spacing"
+                android:text="@{project.progress +`%`}"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

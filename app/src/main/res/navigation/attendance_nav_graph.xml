@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/attendance_nav_graph"
+    app:startDestination="@id/attendanceFragment">
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.UpdateProfileFragment"
+        android:label="UpdateProfileFragment" />
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.vishwaagrotech.digitalhr.ui.dashboard.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/action_profileFragment2_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_profileFragment2_to_updateProfileFragment"
+        app:destination="@id/updateProfileFragment" />
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.dashboard.AttendanceFragment"
+        tools:layout="@layout/fragment_attendance"
+        android:label="AttendanceFragment" />
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.vishwaagrotech.digitalhr.ui.profile.NotificationFragment"
+        tools:layout="@layout/fragment_notification"
+        android:label="NotificationFragment"/>
+
+    <action android:id="@+id/global_notification"
+        app:destination="@id/notificationFragment"/>
+    <action android:id="@+id/global_profile"
+        app:destination="@id/profileFragment2"/>
+</navigation>

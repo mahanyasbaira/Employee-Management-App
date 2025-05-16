@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="leaveType"
+            type="com.vishwaagrotech.digitalhr.model.LeaveType" />
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.dashboard.adapter.LeaveTypeAdapter" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/inner_spacing"
+        android:background="@drawable/button_radius"
+        android:backgroundTint="@color/lightWhite"
+        android:orientation="vertical"
+        android:padding="@dimen/section_spacing">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{leaveType.title}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_h5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|bottom"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_10sdp">
+
+            <TextView
+                intText="@{leaveType.used}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h2"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_2sdp"
+                android:text="@string/slash"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h5"
+                android:textStyle="bold"
+                android:visibility="@{leaveType.total == 0 ? View.GONE:View.VISIBLE}" />
+
+            <TextView
+                intText="@{leaveType.total}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h5"
+                android:textStyle="bold"
+                android:visibility="@{leaveType.total == 0 ?  View.GONE:View.VISIBLE}" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

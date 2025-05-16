@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.form.WelcomeFragment" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient">
+
+        <ImageView
+            android:id="@+id/image_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha=".2"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/welcome1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingVertical="@dimen/section_spacing"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/section_spacing"
+                android:text="@string/lorem_ipsum_dolo"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_50sdp"
+                android:maxLines="2"
+                android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_quisque_ac_sed_sed_enim"
+                android:textAllCaps="false"
+                android:layout_marginVertical="@dimen/section_spacing"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h6" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_radius"
+                android:backgroundTintMode="add"
+                app:backgroundTint="@null"
+                app:cornerRadius="@dimen/_5sdp"
+                android:insetBottom="0dp"
+                android:insetTop="0dp"
+                android:onClick="@{()->handler.formFragment()}"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h6"
+                android:layout_marginHorizontal="@dimen/_30sdp"
+                android:layout_marginVertical="@dimen/section_spacing"
+                android:text="@string/let_s_get_started"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

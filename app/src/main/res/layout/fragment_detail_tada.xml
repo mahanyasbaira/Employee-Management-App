@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.tada.DetailTadaFragment" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_light_arrow" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/button_update"
+            android:layout_below="@id/toolbar">
+
+            <LinearLayout
+                android:id="@+id/linear_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/section_spacing"
+                android:layout_marginTop="@dimen/section_spacing"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/section_spacing"
+                    android:paddingHorizontal="@dimen/inner_spacing"
+                    android:layout_gravity="end"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_h5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/section_spacing"
+                    android:padding="@dimen/inner_spacing"
+                    android:text="Title"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_h6" />
+
+                <TextView
+                    android:id="@+id/text_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/inner_spacing"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_h5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/section_spacing"
+                    android:padding="@dimen/inner_spacing"
+                    android:text="Description"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_h6" />
+
+                <TextView
+                    android:id="@+id/text_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/inner_spacing"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_h5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/section_spacing"
+                    android:padding="@dimen/inner_spacing"
+                    android:text="Attachments"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_h6" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_old_attachment_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/section_spacing"
+                    android:padding="@dimen/inner_spacing"
+                    android:text="Verified By"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/text_size_h6" />
+
+                <TextView
+                    android:id="@+id/text_verified_by"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/inner_spacing"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_h5" />
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_update"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/section_spacing"
+            android:layout_marginTop="@dimen/section_spacing"
+            android:layout_marginEnd="@dimen/section_spacing"
+            android:layout_marginBottom="@dimen/section_spacing"
+            android:background="@drawable/button_radius"
+            android:backgroundTint="@color/dark_orange"
+            android:text="Pending"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_h6"
+            app:backgroundTint="@null"
+            app:cornerRadius="0dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@id/text_expense"
+            android:layout_marginStart="@dimen/section_spacing"
+            android:layout_marginTop="@dimen/section_spacing"
+            android:layout_marginBottom="@dimen/section_spacing"
+            android:gravity="center"
+            android:text="Total"
+            android:textAllCaps="false"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_h5"
+            app:backgroundTint="@null"
+            app:cornerRadius="0dp" />
+
+        <TextView
+            android:id="@+id/text_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/section_spacing"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/section_spacing"
+            android:layout_marginEnd="@dimen/section_spacing"
+            android:layout_marginBottom="@dimen/section_spacing"
+            android:text=""
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_h4"
+            app:backgroundTint="@null"
+            app:cornerRadius="0dp" />
+    </RelativeLayout>
+</layout>

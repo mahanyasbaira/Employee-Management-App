@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="task"
+            type="com.vishwaagrotech.digitalhr.model.Task" />
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.project.adapter.TaskDetailListAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_margin="@dimen/inner_spacing"
+        android:background="@drawable/button_radius"
+        android:backgroundTint="@color/lightWhite"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingHorizontal="@dimen/section_spacing"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/view_indicator"
+            android:text="@{task.name}"/>
+
+        <View
+            android:id="@+id/view_indicator"
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="match_parent"
+            view_background_tint_task="@{task.status}"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+</layout>

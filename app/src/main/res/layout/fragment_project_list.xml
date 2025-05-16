@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.project.ProjectListFragment" />
+
+        <variable
+            name="viewmodel"
+            type="com.vishwaagrotech.digitalhr.ui.project.viewmodel.ProjectViewModel" />
+
+    </data>
+
+    <com.simform.refresh.SSPullToRefreshLayout
+        android:id="@+id/refresh_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layout_check_in"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_light_arrow" />
+
+            <HorizontalScrollView
+                android:id="@+id/view_scroller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:layout_margin="@dimen/_15sdp"
+                android:background="@drawable/button_radius"
+                android:backgroundTint="@color/dimWhite">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/inner_spacing"
+                    android:paddingVertical="@dimen/inner_spacing">
+
+                    <TextView
+                        background_tint="@{viewmodel.selected == `All`?`#20FFFFFF`:`#00FFFFFF`}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/inner_spacing"
+                        android:background="@drawable/button_radius"
+                        android:onClick="@{()->viewmodel.onFilterSelected(`All`)}"
+                        android:paddingHorizontal="@dimen/section_spacing"
+                        android:paddingVertical="@dimen/inner_spacing"
+                        android:text="All"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_h5" />
+
+                    <TextView
+                        background_tint="@{viewmodel.selected == `In Progress`?`#20FFFFFF`:`#00FFFFFF`}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/inner_spacing"
+                        android:background="@drawable/button_radius"
+                        android:onClick="@{()->viewmodel.onFilterSelected(`In Progress`)}"
+                        android:paddingHorizontal="@dimen/inner_spacing"
+                        android:paddingVertical="@dimen/inner_spacing"
+                        android:text="In Progress"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_h5" />
+
+                    <TextView
+                        background_tint="@{viewmodel.selected == `Completed`?`#20FFFFFF`:`#00FFFFFF`}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/inner_spacing"
+                        android:background="@drawable/button_radius"
+                        android:onClick="@{()->viewmodel.onFilterSelected(`Completed`)}"
+                        android:paddingHorizontal="@dimen/inner_spacing"
+                        android:paddingVertical="@dimen/inner_spacing"
+                        android:text="Completed"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_h5" />
+
+                    <TextView
+                        background_tint="@{viewmodel.selected == `On Hold`?`#20FFFFFF`:`#00FFFFFF`}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/inner_spacing"
+                        android:background="@drawable/button_radius"
+                        android:onClick="@{()->viewmodel.onFilterSelected(`On Hold`)}"
+                        android:paddingHorizontal="@dimen/inner_spacing"
+                        android:paddingVertical="@dimen/inner_spacing"
+                        android:text="On Hold"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_h5" />
+
+                    <TextView
+                        background_tint="@{viewmodel.selected == `Cancelled`?`#20FFFFFF`:`#00FFFFFF`}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/inner_spacing"
+                        android:background="@drawable/button_radius"
+                        android:onClick="@{()->viewmodel.onFilterSelected(`Cancelled`)}"
+                        android:paddingHorizontal="@dimen/inner_spacing"
+                        android:paddingVertical="@dimen/inner_spacing"
+                        android:text="Cancelled"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_h5" />
+
+                    <TextView
+                        background_tint="@{viewmodel.selected == `Not Started`?`#20FFFFFF`:`#00FFFFFF`}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_radius"
+                        android:onClick="@{()->viewmodel.onFilterSelected(`Not Started`)}"
+                        android:paddingHorizontal="@dimen/inner_spacing"
+                        android:paddingVertical="@dimen/inner_spacing"
+                        android:text="Not Started"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_h5" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/view_scroller"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/section_spacing">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_projects"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </RelativeLayout>
+    </com.simform.refresh.SSPullToRefreshLayout>
+</layout>

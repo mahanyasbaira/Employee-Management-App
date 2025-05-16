@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.vishwaagrotech.digitalhr.ui.profile.SupportFragment" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_light_arrow" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:padding="@dimen/_20sdp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:src="@drawable/ic_support"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/inner_spacing"
+                android:textSize="@dimen/text_size_h4"
+                android:textColor="@color/white"
+                android:text="Help Desk"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/inner_spacing"
+                android:layout_marginBottom="@dimen/section_spacing"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_h5"
+                android:text="Contact us if any problem or complains\nneed to be addressed."/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/button_radius"
+                android:layout_marginVertical="@dimen/inner_spacing">
+
+                <Spinner
+                    android:id="@+id/spinner_department"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="@dimen/_5sdp" />
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/edit_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"
+                android:textSize="@dimen/text_size_h5"
+                android:textColor="@color/white"
+                android:layout_marginVertical="@dimen/inner_spacing"
+                android:background="@drawable/button_radius"
+                android:backgroundTint="@color/lightWhite"
+                android:gravity="start"
+                android:padding="@dimen/section_spacing"
+                android:textColorHint="@color/white"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine" />
+
+            <EditText
+                android:id="@+id/edit_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_80sdp"
+                android:textSize="@dimen/text_size_h5"
+                android:hint="Description"
+                android:textColor="@color/white"
+                android:layout_marginVertical="@dimen/inner_spacing"
+                android:background="@drawable/button_radius"
+                android:backgroundTint="@color/lightWhite"
+                android:gravity="start"
+                android:padding="@dimen/section_spacing"
+                android:textColorHint="@color/white"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_submit_leave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/_5sdp"
+                android:insetTop="0dp"
+                android:layout_marginVertical="@dimen/section_spacing"
+                android:insetBottom="0dp"
+                android:background="@drawable/button_radius"
+                app:backgroundTint="@null"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>
